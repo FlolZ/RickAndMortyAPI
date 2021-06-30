@@ -1,11 +1,19 @@
 import Vue from "vue";
-import Vuex from "vuex";
+import Vuex, { createLogger } from "vuex";
+import { charStore } from "./modules/char.store";
+import { episodeStore } from "./modules/episode.store";
+import { locationStore } from "./modules/location.store";
 
 Vue.use(Vuex);
+const debug = process.env.NODE_ENV !== "production";
 
 export default new Vuex.Store({
-  state: {},
+  modules: {
+    charStore,
+    locationStore,
+    episodeStore,
+  },
   mutations: {},
   actions: {},
-  modules: {},
+  plugins: debug ? [createLogger()] : [],
 });
