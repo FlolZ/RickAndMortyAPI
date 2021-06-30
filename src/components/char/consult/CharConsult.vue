@@ -15,8 +15,8 @@
 import { CharModel } from "@/lib/models/char/char.model";
 import { LocationModel } from "@/lib/models/location/location.model";
 import { defineComponent, reactive, toRefs } from "@vue/composition-api";
-import CharInfo from "./CharInfo.vue";
-import CharEpisodeTable from "./CharEpisodeTable.vue";
+import CharInfo from "./shared/CharInfo.vue";
+import CharEpisodeTable from "./shared/CharEpisodeTable.vue";
 import { EpisodeModel } from "@/lib/models/episode/episode.model";
 
 interface CharConsultPropOptions {

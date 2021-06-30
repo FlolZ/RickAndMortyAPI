@@ -39,7 +39,7 @@ import {
   reactive,
   toRefs,
 } from "@vue/composition-api";
-import CharCard from "../shared/card/CharCard.vue";
+import CharCard from "../../shared/card/CharCard.vue";
 import { extractNumberFromUrl } from "@/helper/number.helper";
 
 interface CharListDialogPropOptions {
