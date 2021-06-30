@@ -21,9 +21,9 @@
               v-for="char in charList.data"
               :key="char.id"
             >
-              <Card :short="true" :char="char" :loading="loading">
+              <CharCard :short="true" :char="char" :loading="loading">
                 {{ char }}
-              </Card>
+              </CharCard>
             </v-col>
           </v-row>
         </v-card-text>
@@ -39,7 +39,7 @@ import {
   reactive,
   toRefs,
 } from "@vue/composition-api";
-import Card from "../shared/card/Card.vue";
+import CharCard from "../shared/card/CharCard.vue";
 import { extractNumberFromUrl } from "@/helper/number.helper";
 
 interface CharListDialogPropOptions {
@@ -48,7 +48,7 @@ interface CharListDialogPropOptions {
 
 export default defineComponent<CharListDialogPropOptions>({
   components: {
-    Card,
+    CharCard,
   },
   props: {
     charUrlList: {

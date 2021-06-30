@@ -49,12 +49,12 @@
 import { CharModel } from "@/lib/models/char/char.model";
 import { defineComponent, reactive, toRefs } from "@vue/composition-api";
 
-interface CharListPropOptions {
+interface CharCardPropOptions {
   char: CharModel;
   loading: boolean;
   short: boolean;
 }
-export default defineComponent<CharListPropOptions>({
+export default defineComponent<CharCardPropOptions>({
   props: {
     char: {
       type: Object,
