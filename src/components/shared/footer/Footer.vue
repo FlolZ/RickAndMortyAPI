@@ -3,12 +3,10 @@
     <v-col>
       <div class="footer">
         <div class="copyright">
-          © 2021 Rick And Morty techical test by :
+          © 2021 Rick And Morty
           <a href="https://fr.linkedin.com/in/horrut-florian-37897a5a"
             >Florian Horrut</a
           >
-          &nbsp;for
-          <a href="https://www.jellysmack.com/">Jellysmack</a>
         </div>
       </div>
     </v-col>
