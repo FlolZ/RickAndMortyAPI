@@ -10,17 +10,17 @@ export class CharManager {
   ): Promise<ApiModel<CharModel[]>> {
     const url = `/character`;
     return this.apiClient
-      .get(url, { params })
+      .get<ApiModel<CharModel[]>>(url, { params })
       .then((response) => response.data);
   }
 
   public async getChar(charId: number): Promise<CharModel> {
     const url = `/character/${charId}`;
-    return this.apiClient.get(url).then((response) => response.data);
+    return this.apiClient.get<CharModel>(url).then((response) => response.data);
   }
 
   public async getMultipleChar(params: string[]): Promise<CharModel[]> {
     const url = `/character/${params}`;
-    return this.apiClient.get(url).then((response) => response.data);
+    return this.apiClient.get<CharModel[]>(url).then((response) => response.data);
   }
 }

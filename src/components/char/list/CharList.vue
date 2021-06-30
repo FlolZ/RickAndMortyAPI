@@ -2,20 +2,20 @@
   <div v-if="charList">
     <v-row justify="space-around">
       <v-col class="col-10 col-md-3" v-for="char in charList" :key="char.id">
-        <ListCard
+        <Card
           :char="char"
           :loading="loading"
           @onCardClick="onCardClick(char.id)"
         >
           {{ char }}
-        </ListCard>
+        </Card>
       </v-col>
     </v-row>
   </div>
 </template>
 
 <script lang="ts">
-import ListCard from "@/components/shared/list-card/ListCard.vue";
+import Card from "@/components/char/shared/card/Card.vue";
 import { CharModel } from "@/lib/models/char/char.model";
 import { defineComponent, reactive, toRefs } from "@vue/composition-api";
 
@@ -25,7 +25,7 @@ interface CharListPropOptions {
 }
 export default defineComponent<CharListPropOptions>({
   components: {
-    ListCard,
+    Card,
   },
   props: {
     charList: {
