@@ -1,4 +1,4 @@
-# jellysmack-rickandmorty-test
+# rickandmorty-test
 
 ## Project setup
 ```
