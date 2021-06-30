@@ -122,7 +122,6 @@ export default defineComponent({
       if (isNewSearch) {
         data.queryString = {} as QueryApiModel;
       }
-      console.log('params', params);
       return root.$store.dispatch("charStore/searchCharacters", params);
     }
 
