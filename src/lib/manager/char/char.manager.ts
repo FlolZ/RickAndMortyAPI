@@ -6,7 +6,7 @@ export class CharManager {
   public constructor(private apiClient: ApiClient) {}
 
   public async getCharList(
-    params?: QueryApiModel | string[]
+    params?: QueryApiModel
   ): Promise<ApiModel<CharModel[]>> {
     const url = `/character`;
     return this.apiClient
