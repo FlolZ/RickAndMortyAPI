@@ -4,11 +4,7 @@ import { QueryApiModel } from "@/lib/models/api.model";
 import { CharModel } from "@/lib/models/char/char.model";
 import { InfoModel } from "@/lib/models/info/info.model";
 import { ActionTree, GetterTree, Module, MutationTree } from "vuex";
-
-export interface MainState {
-  version: string;
-  $localForage: any;
-}
+import { MainState } from "..";
 
 const charManager = new CharManager(apiClient);
 

@@ -2,11 +2,7 @@ import { apiClient } from "@/lib/api-client";
 import { LocationManager } from "@/lib/manager/location/location.manager";
 import { LocationModel } from "@/lib/models/location/location.model";
 import { ActionTree, GetterTree, Module, MutationTree } from "vuex";
-
-export interface MainState {
-  version: string;
-  $localForage: any;
-}
+import { MainState } from "..";
 
 const locationManager = new LocationManager(apiClient);
 

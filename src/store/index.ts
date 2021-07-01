@@ -4,6 +4,10 @@ import { charStore } from "./modules/char.store";
 import { episodeStore } from "./modules/episode.store";
 import { locationStore } from "./modules/location.store";
 
+export interface MainState {
+  version: string;
+}
+
 Vue.use(Vuex);
 const debug = process.env.NODE_ENV !== "production";
 

@@ -2,11 +2,8 @@ import { apiClient } from "@/lib/api-client";
 import { EpisodeManager } from "@/lib/manager/episode/episode.manager";
 import { EpisodeModel } from "@/lib/models/episode/episode.model";
 import { ActionTree, GetterTree, Module, MutationTree } from "vuex";
+import { MainState } from "..";
 
-export interface MainState {
-  version: string;
-  $localForage: any;
-}
 
 const episodeManager = new EpisodeManager(apiClient);
 
