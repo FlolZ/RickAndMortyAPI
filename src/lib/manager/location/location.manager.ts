@@ -5,6 +5,8 @@ export class LocationManager {
   public constructor(private apiClient: ApiClient) {}
 
   public async getLocation(url: string): Promise<LocationModel> {
-    return this.apiClient.get<LocationModel>(url).then((response) => response.data);
+    return this.apiClient
+      .get<LocationModel>(url)
+      .then((response) => response.data);
   }
 }

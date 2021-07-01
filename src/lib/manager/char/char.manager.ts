@@ -21,6 +21,8 @@ export class CharManager {
 
   public async getMultipleChar(params: string[]): Promise<CharModel[]> {
     const url = `/character/${params}`;
-    return this.apiClient.get<CharModel[]>(url).then((response) => response.data);
+    return this.apiClient
+      .get<CharModel[]>(url)
+      .then((response) => response.data);
   }
 }

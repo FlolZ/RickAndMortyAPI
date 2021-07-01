@@ -6,6 +6,8 @@ export class EpisodeManager {
 
   public async getMultipleEpisode(params: string[]): Promise<EpisodeModel[]> {
     const url = `/episode/${params}`;
-    return this.apiClient.get<EpisodeModel[]>(url).then((response) => response.data);
+    return this.apiClient
+      .get<EpisodeModel[]>(url)
+      .then((response) => response.data);
   }
 }
