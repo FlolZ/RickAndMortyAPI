@@ -5,7 +5,7 @@ import { createLocalVue, mount, shallowMount } from "@vue/test-utils";
 import Vuetify from 'vuetify';
 
 describe("CharCard.vue", () => {
-    const localVue = createLocalVue()
+    const localVue = createLocalVue();
     let vuetify: Vuetify;
     const name = "charName-1";
     const char: CharModel = {
