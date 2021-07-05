@@ -80,16 +80,53 @@ describe("CharCard.vue", () => {
             localVue,
             vuetify,
             propsData: { char, loading: false },
-        })
+        });
 
-        // With jest we can create snapshot files of the HTML output
         expect(wrapper.html()).toMatchSnapshot()
-
-        // We could also verify this differently
-        // by checking the text content
         const title = wrapper.find('.v-card__title > span')
-
         expect(title.text()).toBe(name)
-    })
+    });
 
+    it('should emit an event when the action v-btn is clicked', () => {
+        vueInit();
+        const name = "charName-1";
+        const char: CharModel = {
+            name,
+            id: 1,
+            status: "Alive",
+            species: "Species",
+            type: "Type",
+            gender: "Male",
+            origin: {
+                name: "originName",
+                url: "originUrl"
+            },
+            location: {
+                name: "Location",
+                url: "locationUrl",
+                type: "locationType",
+                dimension: "locationDimension",
+                residents: ["char", "char1"],
+                created: "locationCreated",
+            },
+            image: "charImg",
+            episode: [],
+            url: "charUrl",
+            created: "charCreated",
+        };
+
+        const wrapper = mount(CharCard, {
+          localVue,
+          vuetify,
+          propsData: { char, loading: false },
+        })
+    
+        const event = jest.fn()
+        const vcard = wrapper.find('.v-card')
+        wrapper.vm.$on('onCardClick', event)
+    
+        expect(event).toHaveBeenCalledTimes(0)
+            vcard.trigger('click')
+            expect(event).toHaveBeenCalledTimes(1)
+      });
 });
