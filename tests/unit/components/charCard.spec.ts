@@ -7,6 +7,31 @@ import Vuetify from 'vuetify';
 describe("CharCard.vue", () => {
     const localVue = createLocalVue()
     let vuetify: Vuetify;
+    const name = "charName-1";
+    const char: CharModel = {
+        name,
+        id: 1,
+        status: "Alive",
+        species: "Species",
+        type: "Type",
+        gender: "Male",
+        origin: {
+            name: "originName",
+            url: "originUrl"
+        },
+        location: {
+            name: "Location",
+            url: "locationUrl",
+            type: "locationType",
+            dimension: "locationDimension",
+            residents: ["char", "char1"],
+            created: "locationCreated",
+        },
+        image: "charImg",
+        episode: [],
+        url: "charUrl",
+        created: "charCreated",
+    };
 
     beforeEach(() => {
         vuetify = new Vuetify();
@@ -14,32 +39,6 @@ describe("CharCard.vue", () => {
     })
 
     it("renders props.char when passed", () => {
-        const name = "charName-1";
-        const char: CharModel = {
-            name,
-            id: 1,
-            status: "Alive",
-            species: "Species",
-            type: "Type",
-            gender: "Male",
-            origin: {
-                name: "originName",
-                url: "originUrl"
-            },
-            location: {
-                name: "Location",
-                url: "locationUrl",
-                type: "locationType",
-                dimension: "locationDimension",
-                residents: ["char", "char1"],
-                created: "locationCreated",
-            },
-            image: "charImg",
-            episode: [],
-            url: "charUrl",
-            created: "charCreated",
-        };
-
         const wrapper = shallowMount(CharCard, {
             propsData: { char, loading: true },
         });
@@ -48,32 +47,6 @@ describe("CharCard.vue", () => {
 
 
     it('should have a custom title and match snapshot', () => {
-        const name = "charName-1";
-        const char: CharModel = {
-            name,
-            id: 1,
-            status: "Alive",
-            species: "Species",
-            type: "Type",
-            gender: "Male",
-            origin: {
-                name: "originName",
-                url: "originUrl"
-            },
-            location: {
-                name: "Location",
-                url: "locationUrl",
-                type: "locationType",
-                dimension: "locationDimension",
-                residents: ["char", "char1"],
-                created: "locationCreated",
-            },
-            image: "charImg",
-            episode: [],
-            url: "charUrl",
-            created: "charCreated",
-        };
-
         const wrapper = mount(CharCard, {
             localVue,
             vuetify,
@@ -86,32 +59,6 @@ describe("CharCard.vue", () => {
     });
 
     it('should emit an event when the action v-card is clicked', () => {
-        const name = "charName-1";
-        const char: CharModel = {
-            name,
-            id: 1,
-            status: "Alive",
-            species: "Species",
-            type: "Type",
-            gender: "Male",
-            origin: {
-                name: "originName",
-                url: "originUrl"
-            },
-            location: {
-                name: "Location",
-                url: "locationUrl",
-                type: "locationType",
-                dimension: "locationDimension",
-                residents: ["char", "char1"],
-                created: "locationCreated",
-            },
-            image: "charImg",
-            episode: [],
-            url: "charUrl",
-            created: "charCreated",
-        };
-
         const wrapper = mount(CharCard, {
             localVue,
             vuetify,
