@@ -2,6 +2,7 @@
 // import { render, RenderResult } from '@testing-library/vue';
 // import VueI18n from 'vue-i18n';
 import CompositionApi from '@vue/composition-api';
+import { createLocalVue } from '@vue/test-utils';
 import Vue from 'vue';
 import Vuetify from 'vuetify';
 
@@ -9,9 +10,9 @@ export function vueInit(): typeof Vue {
 	Vue.use(Vuetify);
 	Vue.use(CompositionApi);
 	// Vue.use(VueI18n);
-	// const localVue = createLocalVue();
-	// localVue.use(Vuetify);
-	// return localVue;
+	const localVue = createLocalVue();
+	localVue.use(Vuetify);
+	return localVue;
 	return Vue;
 }
 

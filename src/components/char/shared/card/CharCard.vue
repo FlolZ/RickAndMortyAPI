@@ -15,7 +15,7 @@
 
     <v-img height="250" :src="char.image"></v-img>
 
-    <v-card-title>{{ char.name }}</v-card-title>
+    <v-card-title><span>{{ char.name }}</span></v-card-title>
 
     <v-card-text>
       <div class="text-subtitle-1">

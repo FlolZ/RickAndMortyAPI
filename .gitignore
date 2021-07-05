@@ -2,6 +2,9 @@
 node_modules
 /dist
 
+# test files
+tests/unit/components/__snapshots__
+coverage
 
 # local env files
 .env.local
