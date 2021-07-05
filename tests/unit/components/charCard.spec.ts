@@ -9,11 +9,11 @@ describe("CharCard.vue", () => {
     let vuetify: Vuetify;
 
     beforeEach(() => {
-        vuetify = new Vuetify()
+        vuetify = new Vuetify();
+        vueInit();
     })
 
     it("renders props.char when passed", () => {
-        vueInit();
         const name = "charName-1";
         const char: CharModel = {
             name,
@@ -48,8 +48,6 @@ describe("CharCard.vue", () => {
 
 
     it('should have a custom title and match snapshot', () => {
-        vueInit();
-
         const name = "charName-1";
         const char: CharModel = {
             name,
@@ -87,8 +85,7 @@ describe("CharCard.vue", () => {
         expect(title.text()).toBe(name)
     });
 
-    it('should emit an event when the action v-btn is clicked', () => {
-        vueInit();
+    it('should emit an event when the action v-card is clicked', () => {
         const name = "charName-1";
         const char: CharModel = {
             name,
@@ -116,17 +113,17 @@ describe("CharCard.vue", () => {
         };
 
         const wrapper = mount(CharCard, {
-          localVue,
-          vuetify,
-          propsData: { char, loading: false },
+            localVue,
+            vuetify,
+            propsData: { char, loading: false },
         })
-    
+
         const event = jest.fn()
         const vcard = wrapper.find('.v-card')
         wrapper.vm.$on('onCardClick', event)
-    
+
         expect(event).toHaveBeenCalledTimes(0)
-            vcard.trigger('click')
-            expect(event).toHaveBeenCalledTimes(1)
-      });
+        vcard.trigger('click')
+        expect(event).toHaveBeenCalledTimes(1)
+    });
 });
